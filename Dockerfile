@@ -20,6 +20,8 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log
 RUN rm -r /etc/nginx
 COPY ./nginx /etc/nginx
 
+RUN chmod +x /docker-entrypoint.sh
+
 EXPOSE 443
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
